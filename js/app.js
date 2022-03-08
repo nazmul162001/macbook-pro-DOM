@@ -42,7 +42,7 @@ const applyBtn = () => {
   const promoValue = promoInput.value
   const totalAmount = Number(totalElement.innerText)
   const discountAmount = document.getElementById('discount-amount');
-  if (promoValue == 'hot20') {
+  if (promoValue == 'Hot20') {
     const discount = (totalAmount / 100) * 20;
     discountAmount.innerText = discount.toFixed(2);
     inTotalElement.innerText = totalAmount - discount;
