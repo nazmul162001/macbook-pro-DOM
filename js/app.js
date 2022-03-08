@@ -34,3 +34,19 @@ const updateTotal = () => {
   extraTotalElement.innerText = extraTotalCost;
   inTotalElement.innerText = extraTotalCost;
 }
+// applyPromoCode 
+const applyBtn = () => {
+  const totalElement = document.getElementById('extra-total-cost')
+  const inTotalElement = document.getElementById('in-total')
+  const promoInput = document.getElementById('promo-code')
+  const promoValue = promoInput.value
+  const totalAmount = Number(totalElement.innerText)
+  if (promoValue == 'hot20') {
+    const discount = (totalAmount / 100) * 20;
+    inTotalElement.innerText = totalAmount - discount;
+    document.getElementById('wrong-promo').classList.add("d-none")
+} else {
+    document.getElementById('wrong-promo').classList.remove("d-none")
+}
+promoInput.value = '' // clearing the promo input section
+}
