@@ -41,10 +41,13 @@ const applyBtn = () => {
   const promoInput = document.getElementById('promo-code')
   const promoValue = promoInput.value
   const totalAmount = Number(totalElement.innerText)
+  const discountAmount = document.getElementById('discount-amount');
   if (promoValue == 'hot20') {
     const discount = (totalAmount / 100) * 20;
+    discountAmount.innerText = discount.toFixed(2);
     inTotalElement.innerText = totalAmount - discount;
     document.getElementById('wrong-promo').classList.add("d-none")
+    document.getElementById('add-promo').classList.remove("d-none")
 } else {
     document.getElementById('wrong-promo').classList.remove("d-none")
 }
